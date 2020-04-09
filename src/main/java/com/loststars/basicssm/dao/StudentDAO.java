@@ -6,7 +6,7 @@ import com.loststars.basicssm.model.Student;
 
 public interface StudentDAO {
 
-	public List<Student> listStudents();
-	
-	public void addStudent(Student student);
+    public List<Student> listStudents();
+    
+    public void addStudent(Student student);
 }

@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class BasicSSMApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BasicSSMApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BasicSSMApplication.class, args);
+    }
 }

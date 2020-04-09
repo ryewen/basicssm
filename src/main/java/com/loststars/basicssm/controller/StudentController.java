@@ -14,30 +14,30 @@ import com.loststars.basicssm.service.StudentService;
 
 @Controller
 public class StudentController {
-	
-	@Autowired
-	private StudentService studentService;
+    
+    @Autowired
+    private StudentService studentService;
 
-	@RequestMapping("/listStudents")
-	public String listStudents(Model model) {
-		List<Student> students = studentService.listStudents();
-		model.addAttribute("students", students);
-		return "listStudents";
-	}
-	
-	@RequestMapping(path = "/addStudent", method = RequestMethod.GET)
-	public String addStudent() {
-		return "addStudentForm";
-	}
-	
-	@RequestMapping(path = "/addStudent", method = RequestMethod.POST)
-	public String addStudent(@RequestParam(name = "name") String name,  @RequestParam(name = "age") int age) {
-		try {
-			studentService.addStudent(name, age);
-			return "addStudentSuccess";
-		} catch (Exception e) {
-			System.out.println(e.toString());
-			return "addStudentFail";
-		}
-	}
+    @RequestMapping("/listStudents")
+    public String listStudents(Model model) {
+        List<Student> students = studentService.listStudents();
+        model.addAttribute("students", students);
+        return "listStudents";
+    }
+    
+    @RequestMapping(path = "/addStudent", method = RequestMethod.GET)
+    public String addStudent() {
+        return "addStudentForm";
+    }
+    
+    @RequestMapping(path = "/addStudent", method = RequestMethod.POST)
+    public String addStudent(@RequestParam(name = "name") String name,  @RequestParam(name = "age") int age) {
+        try {
+            studentService.addStudent(name, age);
+            return "addStudentSuccess";
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return "addStudentFail";
+        }
+    }
 }
